@@ -3,9 +3,18 @@ interface SearchProps {
    checkChange: (value: string) => unknown;
 }
 
+function CheckTargetValueEvent(e: any): e is {target: {value: string}} {
+   if (e && e.target && e.target.value) {
+      return e
+   }
+   return e
+}
+
 export default function Search({ value, checkChange }: SearchProps) {
-    function handleChange(e: any) {
-       checkChange(e.target.value)
+    function handleChange(e: unknown) {
+       if (CheckTargetValueEvent(e)) {
+         checkChange(e.target.value)
+       }  
     }
     
     return (
