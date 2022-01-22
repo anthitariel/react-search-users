@@ -4,6 +4,7 @@ import Search from './components/Search';
 import UserList from './components/UserList';
 import type { User } from "./types";
 import Loader from './components/Loader';
+import Button from './components/Button';
 
 export default function App() {
   let [loading, setLoad] = React.useState(false)
@@ -34,6 +35,7 @@ return (
          <section> 
             <h1>10 Users: Fetch and Search</h1>
             <Search value={inputValue} checkChange={value => setValue(value)}/>
+            <Button />
             {error && <p className='Loader'>Error...</p>}
           </section>
          <section>
