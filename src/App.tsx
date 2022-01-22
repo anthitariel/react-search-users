@@ -3,7 +3,7 @@ import './App.css';
 import Search from './components/Search';
 import UserList from './components/UserList';
 import type { User } from "./types";
-import Loader from './Loader';
+import Loader from './components/Loader';
 
 export default function App() {
   let [loading, setLoad] = React.useState(false)
